@@ -210,6 +210,8 @@ write_map(pqxx::work &w,
     writer.attribute("maxlon", bounds.maxlon);
     writer.end();
 
+    writer.text("<!-- \"copyright=\"OpenStreetMap and contributors\" attribution=\"http://www.openstreetmap.org/copyright/\" license=\"http://creativecommons.org/licenses/by/2.0/\" -->");
+
     map_writer mwriter(writer, w, changeset_cache);
     mwriter.write();
   
